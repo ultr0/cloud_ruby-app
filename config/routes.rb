@@ -1,10 +1,14 @@
 Rails.application.routes.draw do
-  get 'welcome/index'
+  get 'project/index'
 
-  resources :articles do
-    resources :comments
+  # resources :articles do
+  #   resources :comments
+  # end
+
+  resources :project do
+     resources :todo
   end
 
-  root 'welcome#index'
+  root 'project#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

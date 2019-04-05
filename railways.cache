@@ -1,14 +1,22 @@
                    Prefix Verb   URI Pattern                                                                              Controller#Action
-            welcome_index GET    /welcome/index(.:format)                                                                 welcome#index
-                 articles GET    /articles(.:format)                                                                      articles#index
-                          POST   /articles(.:format)                                                                      articles#create
-              new_article GET    /articles/new(.:format)                                                                  articles#new
-             edit_article GET    /articles/:id/edit(.:format)                                                             articles#edit
-                  article GET    /articles/:id(.:format)                                                                  articles#show
-                          PATCH  /articles/:id(.:format)                                                                  articles#update
-                          PUT    /articles/:id(.:format)                                                                  articles#update
-                          DELETE /articles/:id(.:format)                                                                  articles#destroy
-                     root GET    /                                                                                        welcome#index
+            project_index GET    /project/index(.:format)                                                                 project#index
+       project_todo_index GET    /project/:project_id/todo(.:format)                                                      todo#index
+                          POST   /project/:project_id/todo(.:format)                                                      todo#create
+         new_project_todo GET    /project/:project_id/todo/new(.:format)                                                  todo#new
+        edit_project_todo GET    /project/:project_id/todo/:id/edit(.:format)                                             todo#edit
+             project_todo GET    /project/:project_id/todo/:id(.:format)                                                  todo#show
+                          PATCH  /project/:project_id/todo/:id(.:format)                                                  todo#update
+                          PUT    /project/:project_id/todo/:id(.:format)                                                  todo#update
+                          DELETE /project/:project_id/todo/:id(.:format)                                                  todo#destroy
+                          GET    /project(.:format)                                                                       project#index
+                          POST   /project(.:format)                                                                       project#create
+              new_project GET    /project/new(.:format)                                                                   project#new
+             edit_project GET    /project/:id/edit(.:format)                                                              project#edit
+                  project GET    /project/:id(.:format)                                                                   project#show
+                          PATCH  /project/:id(.:format)                                                                   project#update
+                          PUT    /project/:id(.:format)                                                                   project#update
+                          DELETE /project/:id(.:format)                                                                   project#destroy
+                     root GET    /                                                                                        project#index
        rails_service_blob GET    /rails/active_storage/blobs/:signed_id/*filename(.:format)                               active_storage/blobs#show
 rails_blob_representation GET    /rails/active_storage/representations/:signed_blob_id/:variation_key/*filename(.:format) active_storage/representations#show
        rails_disk_service GET    /rails/active_storage/disk/:encoded_key/*filename(.:format)                              active_storage/disk#show
