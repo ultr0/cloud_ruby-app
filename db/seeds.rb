@@ -10,12 +10,12 @@ seed_file = Rails.root.join('db', 'seeds.yml')
 config = YAML::load_file(seed_file)
 APP_CONFIG = HashWithIndifferentAccess.new(config)
 
-APP_CONFIG[:todos].each do |proj|
+APP_CONFIG[:projects].each do |proj|
   @project = Project.create!(title: proj[proj.keys[0]])
   proj[:todos].each do |todo|
     puts todo
     puts @project.title
-    Todo.create!(text: todo[:text], isCompleted: todo[:isCompleted], project: @project);
+    Todo.create!(text: todo[:text], isCompleted: todo[:isCompleted], project: @project)
   end
 end
 
