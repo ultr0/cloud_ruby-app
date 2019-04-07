@@ -2,4 +2,6 @@
 <% @projects.each do |project| %>
   <h2><%= project.title %></h2>
   <%= render project.todos %>
+
 <% end %>
+<%= render 'todos/form' %>

@@ -1,10 +1,7 @@
-
-<%= form_with(model: [ @project, @project.todos.build ], local: true) do |form| %>
-  <p>
-    <%= form.label :text %><br>
-    <%= form.text_field :text %>
-  </p>
-  <p>
-    <%= form.submit %>
-  </p>
+<h2>Новая задача:</h2>
+<%= form_with(model: @todo) do |form| %>
+  <%= form.text_field :text, placeholder: "Название задачи..."%></br>
+  <%= form.label 'Название проекта' %>
+  <%= form.select "project", options_from_collection_for_select(@projects, "id", "title") %></br>
+  <%= form.submit 'OK', :class => "button expand" %>
 <% end %>
