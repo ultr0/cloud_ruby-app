@@ -28,3 +28,6 @@ function openbox(id){
 }
 
 
+$(document).on("click", "#btn-add-todo", function(){
+    $("#form-todo").submit();
+});

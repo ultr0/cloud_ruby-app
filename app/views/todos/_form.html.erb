@@ -6,6 +6,6 @@
                   include_blank: true %> <br>
   <%#= form.submit 'Отмена', :class => "button cancel" %>
   <%#= form.submit 'Добавить', :class => "button add" %>
-  <%= link_to "Отмена", '#', id: "btn-cancel-todo" %>
-  <%= link_to "Добавить", '/todos', id: "btn-add-todo" %>
+  <%= link_to "Отмена", '#', id: "btn-cancel-todo", onclick: "openbox('new_todo'); return false" %>
+  <%= link_to "Добавить", '#', id: "btn-add-todo", onclick: "document.getElementById('form-todo').submit(); return false;" %>
 <% end %>
