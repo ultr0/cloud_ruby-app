@@ -5,9 +5,13 @@ class TodosController < ApplicationController
   #   @todo = @project.todos.create(comment_params)
   # end
 
+  def new
+    render plain: params[:todo].inspect
+  end
+
   def create
-    @project = Project.find(params[:project_id])
-    @todo = @project.todos.create(comment_params)
+    @project = Project.find(params[:todo][:project_id])
+    @todo = @project.todos.create(todo_params)
     # redirect_to
   end
 

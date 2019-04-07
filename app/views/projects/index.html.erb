@@ -1,7 +1,16 @@
+<%= javascript_include_tag "application" %>
+
+<script>
+
+</script>
+
 <h1>Задачи</h1>
+<a href="#" onclick="openbox('new_todo'); return false"><img src="https://image.flaticon.com/icons/svg/149/149162.svg" height="50px" width="50px"></a>
 <% @projects.each do |project| %>
   <h2><%= project.title %></h2>
   <%= render project.todos %>
 
 <% end %>
+<div id="new_todo" style="display:none;">
 <%= render 'todos/form' %>
+</div>

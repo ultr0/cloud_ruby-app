@@ -13,4 +13,18 @@
 //= require rails-ujs
 //= require activestorage
 // require turbolinks
+// require jquery
+// require jquery_ujs
 //= require_tree .
+
+function openbox(id){
+    display = document.getElementById(id).style.display;
+
+    if(display=='none'){
+        document.getElementById(id).style.display='block';
+    }else{
+        document.getElementById(id).style.display='none';
+    }
+}
+
+

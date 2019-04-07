@@ -1,7 +1,11 @@
 <h2>Новая задача:</h2>
-<%= form_with(model: @todo) do |form| %>
-  <%= form.text_field :text, placeholder: "Название задачи..."%></br>
-  <%= form.label 'Название проекта' %>
-  <%= form.select "project", options_from_collection_for_select(@projects, "id", "title") %></br>
-  <%= form.submit 'OK', :class => "button expand" %>
+<%= form_with(model: Todo.new, html: {id:"form-todo"}) do |form| %>
+  <%= form.text_field :text, placeholder: "Название задачи..." %> <br>
+  <%= form.label 'Название проекта:' %>
+  <%= form.select :project_id, Project.all.collect { |p| [ p.title, p.id ] },
+                  include_blank: true %> <br>
+  <%#= form.submit 'Отмена', :class => "button cancel" %>
+  <%#= form.submit 'Добавить', :class => "button add" %>
+  <%= link_to "Отмена", '#', id: "btn-cancel-todo" %>
+  <%= link_to "Добавить", '/todos', id: "btn-add-todo" %>
 <% end %>
